@@ -1,43 +1,34 @@
-﻿namespace GuessingGame
+﻿namespace gameCollection
 {
     internal class Program
     {
         static void Main(string[] args)
         {
 
-            bool isCorrectGuess = false;
-            Random random = new Random();
+            int UserOption;
 
-            int randomNumber = random.Next(1, 11);
+            Console.WriteLine("Welcome to the Game Collection!");
+            Console.WriteLine("Please enter below number to choose a game to play:");
+            Console.WriteLine("1.Guessing Game");
+            Console.WriteLine("2.Dice Game");
 
-            Console.WriteLine("=======Welcome the the fun guessiong game=======");
-            Console.WriteLine("A number between 1 and 10 will be generated.");
-            Console.WriteLine("If you guess the correct number, you win!");
-            Console.WriteLine("================================================");
+            UserOption = Convert.ToInt32(Console.ReadLine());
 
-
-            while (!isCorrectGuess) 
+            if (UserOption == 1)
             {
-            Console.WriteLine("Please enter your guess (between 1 and 10):");
-            int guess = Convert.ToInt32(Console.ReadLine());
-
-                if(guess > randomNumber)
-                {
-                    Console.WriteLine("You guess is too high");
-                }else if(guess < randomNumber)
-                {
-                    Console.WriteLine("You guess is too low");
-                }
-                else
-                {
-                    Console.WriteLine("Congratulations! You guessed the correct number!");
-                    isCorrectGuess = true;
-                    
-                }
-                Console.WriteLine("You have won the game!");
+                GuessGame guessGame = new GuessGame();
+                guessGame.GuessingGame();
+            }
+            else if (UserOption == 2)
+            {
+                
+            }
+            else
+            {
+                Console.WriteLine("Invalid option. Please restart the program and choose a valid game.");
             }
 
-            Console.ReadKey();
+
 
         }
     }
