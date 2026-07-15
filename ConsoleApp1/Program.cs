@@ -10,7 +10,7 @@
             Console.WriteLine("Welcome to the Game Collection!");
             Console.WriteLine("Please enter below number to choose a game to play:");
             Console.WriteLine("1.Guessing Game");
-            Console.WriteLine("2.Dice Game");
+            Console.WriteLine("2.To-Do-List");
 
             UserOption = Convert.ToInt32(Console.ReadLine());
 
@@ -21,7 +21,8 @@
             }
             else if (UserOption == 2)
             {
-                
+                ToDoList toDoList = new ToDoList();
+                toDoList.todoList();
             }
             else
             {
